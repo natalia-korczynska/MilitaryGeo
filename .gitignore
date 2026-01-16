@@ -1,0 +1,16 @@
+# Zależności (biblioteki)
+node_modules/
+
+# Produkcja i Build
+build/
+dist/
+
+# Pliki systemowe i edytora
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logi
+*.log
+npm-debug.log*
