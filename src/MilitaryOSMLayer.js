@@ -1,10 +1,8 @@
-// ---- IMPORTY ----
 import { useEffect, useState, useRef } from "react";
 import { GeoJSON, useMap } from "react-leaflet";
 import axios from "axios";
 import osmtogeojson from "osmtogeojson";
 
-// ---- LISTA TYPÓW ----
 const MILITARY_TYPES = [
     "barracks",
     "naval_base",
@@ -12,14 +10,12 @@ const MILITARY_TYPES = [
     // "airfield", "training_area", "range", "office", "danger_area", "shelter", "bunker"
 ];
 
-// ---- ETYKIETY ----
 const MILITARY_LABELS = {
     barracks: "Koszary",
     naval_base: "Baza morska",
     // TODO: Dodaj tłumaczenia dla nowych typów
 };
 
-// ---- KOMPONENT ----
 export default function MilitaryOSMLayer() {
     const [militaryType, setMilitaryType] = useState("barracks");
     const [data, setData] = useState(null);
@@ -28,7 +24,6 @@ export default function MilitaryOSMLayer() {
     const layerRef = useRef(null);
     const map = useMap();
 
-    // ---- FUNKCJA POBIERANIA DANYCH ----
     const fetchData = async (type) => {
         setLoading(true);
         setData(null);
