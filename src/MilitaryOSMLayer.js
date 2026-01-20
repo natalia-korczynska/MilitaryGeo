@@ -54,12 +54,10 @@ export default function MilitaryOSMLayer() {
         
     };
 
-    // ---- Pobieranie danych przy zmianie typu ----
     useEffect(() => {
         fetchData(militaryType);
     }, [militaryType]);
 
-    // ---- Dopasowanie widoku mapy ----
     useEffect(() => {
         if (!data || !layerRef.current) return;
 
@@ -70,10 +68,8 @@ export default function MilitaryOSMLayer() {
         }
     }, [data, map]);
 
-    // ---- RENDER ----
     return (
         <>
-            {/* ---- LOADER ---- */}
             {loading && (
                 <div
                     style={{
@@ -96,7 +92,6 @@ export default function MilitaryOSMLayer() {
                 </div>
             )}
 
-            {/* ---- PANEL PRZYCISKÓW ---- */}
             <div
                 style={{
                     position: "absolute",
@@ -108,7 +103,6 @@ export default function MilitaryOSMLayer() {
                     borderRadius: "8px",
                     boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
                     width: "80vw",
-                    // TODO: Można przesunąć panel niżej, aby nie zasłaniał zoom controls
                 }}
             >
                 <div style={{ fontWeight: "bold", marginBottom: "6px" }}>
